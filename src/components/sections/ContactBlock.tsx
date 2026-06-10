@@ -23,9 +23,9 @@ export function ContactBlock() {
           {/* Info */}
           <Reveal>
             <div className="space-y-6 rounded-2xl border border-hairline bg-card p-8 shadow-card">
-              <ContactRow icon={Mail} label="Email" value="hello@qtwebco.com" />
-              <ContactRow icon={Phone} label="Phone" value="(555) 010-2200" />
-              <ContactRow icon={MapPin} label="Studio" value="Charlotte, NC · Remote-first" />
+              <ContactRow icon={Mail} label="Email" value="[Email goes here]" />
+              <ContactRow icon={Phone} label="Phone" value="(123) 456-7890" />
+              <ContactRow icon={MapPin} label="ADDRESS" value="[Where are you located?]" />
 
               <div className="mt-6 overflow-hidden rounded-xl border border-hairline">
                 <iframe

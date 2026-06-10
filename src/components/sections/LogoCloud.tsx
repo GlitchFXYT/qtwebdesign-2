@@ -1,4 +1,4 @@
-const logos = ["Apex Roofing", "GreenScape", "BlueWave HVAC", "Crystal Detail", "PipeWorks", "Summit Homes", "Vertex Build", "ClearCut"];
+const logos = ["[Insert Logo]", "[Insert Logo]", "[Insert Logo]", "[Insert Logo]", "[Insert Logo]", "[Insert Logo]", "[Insert Logo]", "[Insert Logo]"];
 
 export function LogoCloud() {
   return (

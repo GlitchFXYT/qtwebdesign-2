@@ -46,11 +46,11 @@ export function ContactBlock() {
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Name" placeholder="Alex Rivera" />
-                <Field label="Company" placeholder="Apex Roofing" />
+                <Field label="PHONE NUMBER" placeholder="555-010-2200" />
               </div>
               <Field label="Email" type="email" placeholder="alex@apex.com" />
               <div className="grid gap-2">
-                <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">Project Type</label>
+                <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">SUBJECT</label>
                 <select className="rounded-xl border border-hairline bg-background px-4 py-2.5 text-sm outline-none focus:border-brand-violet">
                   <option>New website build</option>
                   <option>Redesign of existing site</option>

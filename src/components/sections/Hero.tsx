@@ -61,11 +61,11 @@ export function Hero() {
             <div className="mt-14 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-xs font-medium uppercase tracking-wider text-ink-soft/80">
               <span>Modern Frameworks</span>
               <span className="h-1 w-1 rounded-full bg-hairline" />
-              <span>SEO-Ready</span>
+              <span>SEO READY</span>
               <span className="h-1 w-1 rounded-full bg-hairline" />
-              <span>Mobile-First</span>
+              <span>WELL ORGANIZED</span>
               <span className="h-1 w-1 rounded-full bg-hairline" />
-              <span>Conversion-Focused</span>
+              <span>CONSUMER ORIENTED</span>
             </div>
           </Reveal>
         </div>

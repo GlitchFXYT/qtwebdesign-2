@@ -51,12 +51,11 @@ export function ContactBlock() {
               <Field label="Email" type="email" placeholder="alex@apex.com" />
               <div className="grid gap-2">
                 <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">SUBJECT</label>
-                <select className="rounded-xl border border-hairline bg-background px-4 py-2.5 text-sm outline-none focus:border-brand-violet">
-                  <option>New website build</option>
-                  <option>Redesign of existing site</option>
-                  <option>Landing page</option>
-                  <option>Ongoing care plan</option>
-                </select>
+                <input
+                  type="text"
+                  placeholder="What's this about?"
+                  className="rounded-xl border border-hairline bg-background px-4 py-2.5 text-sm outline-none transition focus:border-brand-violet"
+                />
               </div>
               <div className="grid gap-2">
                 <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">What can we help you with?</label>

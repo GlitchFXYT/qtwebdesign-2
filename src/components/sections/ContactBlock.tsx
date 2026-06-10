@@ -59,7 +59,7 @@ export function ContactBlock() {
                 </select>
               </div>
               <div className="grid gap-2">
-                <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">Tell us a bit more</label>
+                <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">What can we help you with?</label>
                 <textarea
                   rows={4}
                   placeholder="Goals, timeline, anything we should know…"

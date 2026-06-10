@@ -27,7 +27,12 @@ export function Footer() {
 
           <FooterCol
             title="Company"
-            items={["About", "Process", "Case Studies", "Careers"]}
+            items={[
+              { label: "About", href: "#" },
+              { label: "Process", href: "#" },
+              { label: "Case Studies", href: "#" },
+              { label: "Careers", href: "#" },
+            ]}
           />
           <FooterCol
             title="Showcase"

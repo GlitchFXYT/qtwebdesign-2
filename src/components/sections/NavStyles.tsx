@@ -50,7 +50,7 @@ function Preview({ variant }: { variant: Variant }) {
     return (
       <div className="border-b border-hairline px-6 py-4">
         <div className="flex items-center justify-between">
-          <span className="font-display text-base font-bold">[Brand Here]</span>
+          <span className="font-display text-base font-bold">Brand</span>
           <div className="hidden gap-8 md:flex">
             {["Work", "Services", "About", "Contact"].map((l) => (
               <a key={l} className="text-sm text-ink-soft hover:text-ink" href="#">{l}</a>
@@ -70,7 +70,7 @@ function Preview({ variant }: { variant: Variant }) {
             <a className="text-sm text-ink-soft hover:text-ink">Services</a>
             <a className="text-sm text-ink-soft hover:text-ink">Portfolio</a>
           </div>
-          <span className="justify-self-center font-display text-xl font-bold tracking-wider">[Brand Here]</span>
+          <span className="justify-self-center font-display text-xl font-bold tracking-wider">Brand</span>
           <div className="hidden justify-end gap-6 md:flex">
             <a className="text-sm text-ink-soft hover:text-ink">Journal</a>
             <a className="text-sm text-ink-soft hover:text-ink">Contact</a>
@@ -84,7 +84,7 @@ function Preview({ variant }: { variant: Variant }) {
     return (
       <div className="px-6 py-4">
         <div className="flex items-center justify-between border-b border-hairline pb-4">
-          <span className="font-display text-base font-bold">[Brand Here]</span>
+          <span className="font-display text-base font-bold">Brand</span>
           <div className="hidden items-center gap-6 md:flex">
             {["Solutions", "Industries", "Resources"].map((l) => (
               <span key={l} className="text-sm text-ink-soft">{l}</span>
@@ -107,7 +107,7 @@ function Preview({ variant }: { variant: Variant }) {
   return (
     <div className="grid grid-cols-[200px_1fr]">
       <aside className="border-r border-hairline bg-surface-2 p-4">
-        <span className="font-display text-sm font-bold">[Brand Here]</span>
+        <span className="font-display text-sm font-bold">Brand</span>
         <nav className="mt-6 space-y-1">
           {["Dashboard", "Projects", "Clients", "Reports", "Settings"].map((l, i) => (
             <a key={l} className={`block rounded-md px-3 py-2 text-sm ${i === 1 ? "bg-gradient-brand text-white" : "text-ink-soft hover:bg-background"}`}>{l}</a>

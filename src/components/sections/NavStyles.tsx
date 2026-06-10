@@ -50,7 +50,7 @@ function Preview({ variant }: { variant: Variant }) {
     return (
       <div className="border-b border-hairline px-6 py-4">
         <div className="flex items-center justify-between">
-          <span className="font-display text-base font-bold">brand<span className="text-gradient">.</span></span>
+          <span className="font-display text-base font-bold">[Brand Here]</span>
           <div className="hidden gap-8 md:flex">
             {["Work", "Services", "About", "Contact"].map((l) => (
               <a key={l} className="text-sm text-ink-soft hover:text-ink" href="#">{l}</a>

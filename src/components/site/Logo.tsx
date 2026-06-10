@@ -1,12 +1,16 @@
-export function Logo({ className = "" }: { className?: string }) {
+import logo from "@/assets/qt-logo.png.asset.json";
+
+export function Logo({ className = "", size = "md" }: { className?: string; size?: "sm" | "md" | "lg" }) {
+  const h = size === "sm" ? "h-8" : size === "lg" ? "h-14" : "h-10";
   return (
-    <span className={`inline-flex items-center gap-2 font-display font-bold tracking-tight ${className}`}>
-      <span className="relative grid h-8 w-8 place-items-center rounded-lg bg-gradient-brand text-white shadow-elegant">
-        <span className="text-[13px] leading-none">Q&amp;T</span>
-      </span>
-      <span className="text-lg">
-        Q&amp;T <span className="text-gradient">Web Co.</span>
-      </span>
+    <span className={`inline-flex items-center ${className}`}>
+      <img
+        src={logo.url}
+        alt="Q&T Web Co."
+        className={`${h} w-auto object-contain`}
+        width={1240}
+        height={1240}
+      />
     </span>
   );
 }

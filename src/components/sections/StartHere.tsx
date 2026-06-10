@@ -4,7 +4,7 @@ import { Reveal, SectionHeader } from "@/components/site/Reveal";
 const cards = [
   {
     icon: Briefcase,
-    title: "Looking for a service website?",
+    title: "Have a service to offer?",
     body: "See realistic concepts for roofers, plumbers, HVAC and more — booking-ready and conversion-tuned.",
     href: "#industries",
     cta: "Browse industries",
@@ -19,7 +19,7 @@ const cards = [
   {
     icon: MousePointerClick,
     title: "Explore interactive features",
-    body: "Filterable galleries, before/after sliders, FAQ accordions and live forms — try them all.",
+    body: "Filterable galleries, before/after sliders, FAQ sections and contact forms — try them all.",
     href: "#interactive",
     cta: "Try the demos",
   },
@@ -32,7 +32,7 @@ export function StartHere() {
         <SectionHeader
           eyebrow="Start Here"
           title={<>Three doors. Pick whichever fits <span className="text-gradient">your visit</span>.</>}
-          description="This site is a guided gallery. Jump straight to what's most useful — you'll never feel lost."
+          description={"This site is a guided gallery, think of it like a menu. \nEvery feature you see here is a possibility for your own website."}
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">

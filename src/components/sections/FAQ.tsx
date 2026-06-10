@@ -19,7 +19,7 @@ export function FAQ() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="FAQ"
-          title={<>Frequent <span className="text-gradient">questions</span></>}
+          title={<>Frequent <span className="text-gradient">Questions</span></>}
         />
 
         <div className="mx-auto mt-12 max-w-3xl divide-y divide-hairline overflow-hidden rounded-2xl border border-hairline bg-card">

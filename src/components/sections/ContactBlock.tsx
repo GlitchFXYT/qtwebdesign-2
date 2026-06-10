@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Mail, Phone, MapPin, Check, CalendarIcon } from "lucide-react";
+import { Mail, Phone, MapPin, Check, CalendarIcon, Loader2 } from "lucide-react";
 import { format } from "date-fns";
 import { Reveal, SectionHeader } from "@/components/site/Reveal";
 import { Calendar } from "@/components/ui/calendar";
@@ -7,12 +7,43 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { cn } from "@/lib/utils";
 
 export function ContactBlock() {
-  const [sent, setSent] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
   const [date, setDate] = useState<Date | undefined>();
+  const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setStatus("submitting");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          subject,
+          preferredDate: date ? format(date, "yyyy-MM-dd") : "",
+          message,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.success) {
+        setErrorMsg(data?.error || "Could not send. Please try again.");
+        setStatus("error");
+        return;
+      }
+      setStatus("sent");
+    } catch {
+      setErrorMsg("Network error. Please try again.");
+      setStatus("error");
+    }
   };
 
   return (
@@ -25,7 +56,6 @@ export function ContactBlock() {
         />
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
-          {/* Info */}
           <Reveal>
             <div className="space-y-6 rounded-2xl border border-hairline bg-card p-8 shadow-card">
               <ContactRow icon={Mail} label="Email" value="[Email goes here]" />
@@ -43,22 +73,23 @@ export function ContactBlock() {
             </div>
           </Reveal>
 
-          {/* Form */}
           <Reveal delay={0.05}>
             <form
               onSubmit={onSubmit}
               className="grid gap-5 rounded-2xl border border-hairline bg-card p-8 shadow-card"
             >
               <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Name" placeholder="Alex Rivera" />
-                <Field label="PHONE NUMBER" placeholder="555-010-2200" />
+                <Field label="Name" placeholder="Alex Rivera" value={name} onChange={setName} required />
+                <Field label="PHONE NUMBER" placeholder="555-010-2200" value={phone} onChange={setPhone} />
               </div>
-              <Field label="Email" type="email" placeholder="alex@apex.com" />
+              <Field label="Email" type="email" placeholder="alex@apex.com" value={email} onChange={setEmail} required />
               <div className="grid gap-2">
                 <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">SUBJECT</label>
                 <input
                   type="text"
                   placeholder="What's this about?"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
                   className="rounded-xl border border-hairline bg-background px-4 py-2.5 text-sm outline-none transition focus:border-brand-violet"
                 />
               </div>
@@ -86,26 +117,30 @@ export function ContactBlock() {
                 <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">What can we help you with?</label>
                 <textarea
                   rows={4}
+                  required
                   placeholder="Requests, Times, Details…"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="resize-none rounded-xl border border-hairline bg-background px-4 py-2.5 text-sm outline-none focus:border-brand-violet"
                 />
               </div>
 
               <button
                 type="submit"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-elegant transition-transform hover:scale-[1.02]"
+                disabled={status === "submitting" || status === "sent"}
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-semibold text-white shadow-elegant transition-transform hover:scale-[1.02] disabled:opacity-70"
               >
-                {sent ? (
-                  <>
-                    <Check className="h-4 w-4" /> Message sent — we'll be in touch
-                  </>
+                {status === "submitting" ? (
+                  <><Loader2 className="h-4 w-4 animate-spin" /> Sending…</>
+                ) : status === "sent" ? (
+                  <><Check className="h-4 w-4" /> Message sent — we'll be in touch</>
                 ) : (
                   "Send message"
                 )}
               </button>
-              <p className="text-center text-xs text-ink-soft">
-                This is a demo form. No data is stored.
-              </p>
+              {status === "error" && (
+                <p className="text-center text-xs text-destructive">{errorMsg}</p>
+              )}
             </form>
           </Reveal>
         </div>
@@ -114,13 +149,30 @@ export function ContactBlock() {
   );
 }
 
-function Field({ label, type = "text", placeholder }: { label: string; type?: string; placeholder?: string }) {
+function Field({
+  label,
+  type = "text",
+  placeholder,
+  value,
+  onChange,
+  required,
+}: {
+  label: string;
+  type?: string;
+  placeholder?: string;
+  value: string;
+  onChange: (v: string) => void;
+  required?: boolean;
+}) {
   return (
     <div className="grid gap-2">
       <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">{label}</label>
       <input
         type={type}
+        required={required}
         placeholder={placeholder}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
         className="rounded-xl border border-hairline bg-background px-4 py-2.5 text-sm outline-none transition focus:border-brand-violet"
       />
     </div>

@@ -107,7 +107,7 @@ function Preview({ variant }: { variant: Variant }) {
   return (
     <div className="grid grid-cols-[200px_1fr]">
       <aside className="border-r border-hairline bg-surface-2 p-4">
-        <span className="font-display text-sm font-bold">sidebar.app</span>
+        <span className="font-display text-sm font-bold">[Brand Here]</span>
         <nav className="mt-6 space-y-1">
           {["Dashboard", "Projects", "Clients", "Reports", "Settings"].map((l, i) => (
             <a key={l} className={`block rounded-md px-3 py-2 text-sm ${i === 1 ? "bg-gradient-brand text-white" : "text-ink-soft hover:bg-background"}`}>{l}</a>

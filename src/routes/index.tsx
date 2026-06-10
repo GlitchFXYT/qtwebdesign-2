@@ -4,7 +4,7 @@ import { Footer } from "@/components/site/Footer";
 import { ProgressRail } from "@/components/site/ProgressRail";
 import { Hero } from "@/components/sections/Hero";
 import { StartHere } from "@/components/sections/StartHere";
-import { LogoCloud } from "@/components/sections/LogoCloud";
+
 import { NavStyles } from "@/components/sections/NavStyles";
 import { Features } from "@/components/sections/Features";
 import { Stats } from "@/components/sections/Stats";
@@ -51,7 +51,7 @@ function Index() {
       <main>
         <Hero />
         <StartHere />
-        <LogoCloud />
+        
         <NavStyles />
         <Features />
         <Stats />

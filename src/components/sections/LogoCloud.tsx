@@ -1,0 +1,23 @@
+const logos = ["Apex Roofing", "GreenScape", "BlueWave HVAC", "Crystal Detail", "PipeWorks", "Summit Homes", "Vertex Build", "ClearCut"];
+
+export function LogoCloud() {
+  return (
+    <section className="border-y border-hairline bg-surface-2/40 py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-xs font-semibold uppercase tracking-widest text-ink-soft">
+          Trusted by service businesses across 20+ industries
+        </p>
+        <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-8">
+          {logos.map((l) => (
+            <div
+              key={l}
+              className="text-center font-display text-sm font-semibold text-ink-soft/70 transition-colors hover:text-ink"
+            >
+              {l}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

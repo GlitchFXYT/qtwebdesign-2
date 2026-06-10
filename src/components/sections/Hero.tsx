@@ -32,9 +32,10 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-ink-soft sm:text-xl">
+            <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-ink-soft sm:text-xl whitespace-pre-line">
               Explore a curated gallery of layouts, interactions and industry-ready concepts —
-              every section is a real capability we can build for you.
+              every section is a real capability we can build for you.{"\n"}
+              An in depth demo for your convienience.
             </p>
           </Reveal>
 

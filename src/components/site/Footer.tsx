@@ -31,7 +31,7 @@ export function Footer() {
               { label: "About", href: "#" },
               { label: "Process", href: "/#process" },
               
-              { label: "Careers", href: "#" },
+              { label: "Careers", href: "/#team" },
             ]}
           />
           <FooterCol

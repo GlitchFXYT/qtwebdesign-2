@@ -58,8 +58,8 @@ export function Industries() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Industry Showcase"
-          title={<>Eight industries. <span className="text-gradient">Eight realistic site concepts</span>.</>}
-          description="Each block is a mini-website tuned for that industry — hero, services, gallery, reviews and CTA."
+          title={<>Eight Examples, <span className="text-gradient">Unlimited Possibilities</span>.</>}
+          description="Each block is a mini-website tuned for that industry, what's your specialty?"
         />
 
         {/* breadcrumb-style sticky industry tab bar */}

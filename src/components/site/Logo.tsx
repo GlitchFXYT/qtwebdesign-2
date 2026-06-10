@@ -1,7 +1,7 @@
 import logo from "@/assets/qt-logo.png.asset.json";
 
 export function Logo({ className = "", size = "md" }: { className?: string; size?: "sm" | "md" | "lg" }) {
-  const h = size === "sm" ? "h-10" : size === "lg" ? "h-20" : "h-14";
+  const h = size === "sm" ? "h-12" : size === "lg" ? "h-24" : "h-16";
   return (
     <span className={`inline-flex items-center ${className}`}>
       <img

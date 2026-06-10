@@ -24,9 +24,6 @@ export function CTAStrip() {
                   Start a project
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
-                <a href="#pricing" className="rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold backdrop-blur">
-                  See pricing
-                </a>
               </div>
             </div>
           </div>

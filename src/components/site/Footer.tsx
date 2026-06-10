@@ -31,7 +31,7 @@ export function Footer() {
           />
           <FooterCol
             title="Showcase"
-            items={["Industries", "Features", "Pricing", "FAQ"]}
+            items={["Industries", "Features", "FAQ"]}
           />
 
           <div>

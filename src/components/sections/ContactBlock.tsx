@@ -1,9 +1,14 @@
 import { useState, type FormEvent } from "react";
-import { Mail, Phone, MapPin, Check } from "lucide-react";
+import { Mail, Phone, MapPin, Check, CalendarIcon } from "lucide-react";
+import { format } from "date-fns";
 import { Reveal, SectionHeader } from "@/components/site/Reveal";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 export function ContactBlock() {
   const [sent, setSent] = useState(false);
+  const [date, setDate] = useState<Date | undefined>();
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();

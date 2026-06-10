@@ -84,7 +84,7 @@ function Preview({ variant }: { variant: Variant }) {
     return (
       <div className="px-6 py-4">
         <div className="flex items-center justify-between border-b border-hairline pb-4">
-          <span className="font-display text-base font-bold">megaco</span>
+          <span className="font-display text-base font-bold">[Brand Here]</span>
           <div className="hidden items-center gap-6 md:flex">
             {["Solutions", "Industries", "Resources"].map((l) => (
               <span key={l} className="text-sm text-ink-soft">{l}</span>

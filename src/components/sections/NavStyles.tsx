@@ -70,7 +70,7 @@ function Preview({ variant }: { variant: Variant }) {
             <a className="text-sm text-ink-soft hover:text-ink">Services</a>
             <a className="text-sm text-ink-soft hover:text-ink">Portfolio</a>
           </div>
-          <span className="justify-self-center font-display text-xl font-bold tracking-wider">ATLAS</span>
+          <span className="justify-self-center font-display text-xl font-bold tracking-wider">[Brand Here]</span>
           <div className="hidden justify-end gap-6 md:flex">
             <a className="text-sm text-ink-soft hover:text-ink">Journal</a>
             <a className="text-sm text-ink-soft hover:text-ink">Contact</a>

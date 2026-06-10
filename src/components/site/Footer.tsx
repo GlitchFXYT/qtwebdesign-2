@@ -48,7 +48,7 @@ export function Footer() {
                 placeholder="you@company.com"
                 className="flex-1 bg-transparent px-4 py-2 text-sm outline-none placeholder:text-ink-soft/70"
               />
-              <button className="bg-gradient-brand px-4 py-2 text-sm font-semibold text-white">
+              <button className="inline-flex items-center justify-center bg-gradient-brand px-4 py-2 text-sm font-semibold leading-none text-white">
                 Join
               </button>
             </form>

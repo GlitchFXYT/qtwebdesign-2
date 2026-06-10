@@ -15,7 +15,7 @@ export function ContactBlock() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Get in Touch"
-          title={<>Tell us about your <span className="text-gradient">project</span></>}
+          title={<>Schedule an <span className="text-gradient">Appointment</span></>}
           description="The more we know, the more useful our first reply will be. We respond inside one business day."
         />
 

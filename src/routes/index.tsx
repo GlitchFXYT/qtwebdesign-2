@@ -13,7 +13,7 @@ import { BeforeAfter } from "@/components/sections/BeforeAfter";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Team } from "@/components/sections/Team";
 import { Process } from "@/components/sections/Process";
-import { Pricing } from "@/components/sections/Pricing";
+
 import { FAQ } from "@/components/sections/FAQ";
 import { Industries } from "@/components/sections/Industries";
 import { CTAStrip } from "@/components/sections/CTAStrip";
@@ -60,7 +60,7 @@ function Index() {
         <Testimonials />
         <Process />
         <Team />
-        <Pricing />
+        
         <FAQ />
         <Industries />
         <CTAStrip />

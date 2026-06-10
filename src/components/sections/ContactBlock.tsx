@@ -1,9 +1,14 @@
 import { useState, type FormEvent } from "react";
-import { Mail, Phone, MapPin, Check } from "lucide-react";
+import { Mail, Phone, MapPin, Check, CalendarIcon } from "lucide-react";
+import { format } from "date-fns";
 import { Reveal, SectionHeader } from "@/components/site/Reveal";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
 
 export function ContactBlock() {
   const [sent, setSent] = useState(false);
+  const [date, setDate] = useState<Date | undefined>();
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -56,6 +61,26 @@ export function ContactBlock() {
                   placeholder="What's this about?"
                   className="rounded-xl border border-hairline bg-background px-4 py-2.5 text-sm outline-none transition focus:border-brand-violet"
                 />
+              </div>
+              <div className="grid gap-2">
+                <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">Preferred Date</label>
+                <Popover>
+                  <PopoverTrigger asChild>
+                    <button
+                      type="button"
+                      className={cn(
+                        "inline-flex items-center gap-2 rounded-xl border border-hairline bg-background px-4 py-2.5 text-left text-sm outline-none transition focus:border-brand-violet",
+                        !date && "text-ink-soft",
+                      )}
+                    >
+                      <CalendarIcon className="h-4 w-4" />
+                      {date ? format(date, "PPP") : "Pick a date"}
+                    </button>
+                  </PopoverTrigger>
+                  <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar mode="single" selected={date} onSelect={setDate} initialFocus className={cn("p-3 pointer-events-auto")} />
+                  </PopoverContent>
+                </Popover>
               </div>
               <div className="grid gap-2">
                 <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">What can we help you with?</label>

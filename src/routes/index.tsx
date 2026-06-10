@@ -38,7 +38,7 @@ const railSections = [
   { id: "features", label: "Features" },
   { id: "interactive", label: "Interactive" },
   { id: "industries", label: "Industries" },
-  { id: "pricing", label: "Pricing" },
+  
   { id: "contact", label: "Contact" },
 ];
 

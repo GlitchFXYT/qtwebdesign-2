@@ -86,7 +86,7 @@ export function ContactBlock() {
                 <label className="text-xs font-semibold uppercase tracking-wider text-ink-soft">What can we help you with?</label>
                 <textarea
                   rows={4}
-                  placeholder="Goals, timeline, anything we should know…"
+                  placeholder="Requests, Times, Details…"
                   className="resize-none rounded-xl border border-hairline bg-background px-4 py-2.5 text-sm outline-none focus:border-brand-violet"
                 />
               </div>

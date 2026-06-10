@@ -10,7 +10,7 @@ const team = [
 
 export function Team() {
   return (
-    <section className="py-20 sm:py-24">
+    <section id="team" className="py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="The Studio"

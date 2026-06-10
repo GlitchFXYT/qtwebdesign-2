@@ -31,7 +31,7 @@ export function StartHere() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Start Here"
-          title={<>Three doors. Pick whichever fits <span className="text-gradient">your visit</span>.</>}
+          title={<>What do you <span className="text-gradient">envision</span> in your website?</>}
           description={"This site is a guided gallery, think of it like a menu. \nEvery feature you see here is a possibility for your own website."}
         />
 

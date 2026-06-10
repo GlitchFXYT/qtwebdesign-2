@@ -48,18 +48,25 @@ export function Footer() {
             <p className="mt-2 text-sm text-ink-soft">
               Monthly design notes. No fluff.
             </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="mt-4 flex overflow-hidden rounded-full border border-hairline bg-background"
-            >
-              <input
-                type="email"
-                placeholder="you@company.com"
-                className="flex-1 bg-transparent px-4 py-2 text-sm outline-none placeholder:text-ink-soft/70"
+            <form onSubmit={(e) => e.preventDefault()} className="group relative mt-4">
+              <div
+                aria-hidden
+                className="absolute -inset-1 rounded-full bg-gradient-brand opacity-20 blur-md transition-opacity duration-500 group-hover:opacity-40 group-focus-within:opacity-50"
               />
-              <button className="inline-flex items-center justify-center bg-gradient-brand px-4 py-2 text-sm font-semibold leading-none text-white">
-                Join
-              </button>
+              <div className="relative flex items-center gap-1 rounded-full border border-hairline bg-background p-1.5 shadow-card ring-1 ring-transparent transition-all duration-300 focus-within:ring-2 focus-within:ring-brand-violet/50">
+                <input
+                  type="email"
+                  required
+                  placeholder="you@company.com"
+                  className="min-w-0 flex-1 bg-transparent px-4 py-2 text-sm font-medium text-ink outline-none placeholder:text-ink-soft/70"
+                />
+                <button
+                  type="submit"
+                  className="shrink-0 rounded-full bg-gradient-brand px-5 py-2 text-sm font-bold text-white shadow-elegant transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0"
+                >
+                  Join
+                </button>
+              </div>
             </form>
           </div>
         </div>

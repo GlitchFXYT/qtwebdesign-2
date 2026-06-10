@@ -29,7 +29,7 @@ export function Footer() {
             title="Company"
             items={[
               { label: "About", href: "#" },
-              { label: "Process", href: "#" },
+              { label: "Process", href: "/#process" },
               
               { label: "Careers", href: "#" },
             ]}

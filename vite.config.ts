@@ -10,13 +10,13 @@ import path from "node:path";
 const entitiesRoot = path.resolve(process.cwd(), "node_modules/entities");
 
 export default defineConfig({
+  plugins: [],
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
   },
   vite: {
-    plugins: [],
     resolve: {
       alias: {
         "entities/lib/decode.js": path.join(entitiesRoot, "lib/decode.js"),

@@ -1,12 +1,14 @@
 ## Problem
 
-Your contact form is saving submissions correctly, but all 4 emails are stuck with status `pending` in the queue. The reason: the scheduled job that processes the email queue every 5 seconds does not exist in the database (`cron.job` is empty), so nothing is actually sending the queued emails to Mailgun.
+In `src/components/sections/Industries.tsx`, the sticky tab bar highlights the "active" industry using an IntersectionObserver with `threshold: [0.25, 0.5]`. Each industry block is much taller than the viewport, so those ratios are rarely reached and the highlighted pill doesn't reliably update to match the section currently in view.
 
 ## Fix
 
-1. Re-run the email infrastructure setup. This is idempotent — it re-creates the `process-email-queue` pg_cron job and refreshes the Vault secret used to call it, without touching your templates, tables, or submissions.
-2. Wait ~10 seconds for the cron tick, then re-check `email_send_log`. The 4 currently-pending emails should flip to `sent` (auth-email TTL is 15 min, app-email TTL is 60 min — the older `quinny bear` test from 23:19 is borderline and may expire to DLQ; the 23:24 ones will go through).
-3. Submit one fresh test from the contact form and confirm the notification arrives at `qtwebsitedesign@gmail.com`.
-4. After your next Publish, the same setup runs against the Live backend so production also has the cron job.
+Rework the active-section tracking in `Industries.tsx` so the highlighted pill always matches the block under the sticky bar:
 
-No code changes required.
+- Replace the ratio-based IntersectionObserver with one that uses a `rootMargin` defining a thin "trigger line" just below the sticky nav (e.g. `rootMargin: "-120px 0px -70% 0px"`, threshold `0`).
+- Whenever a block intersects that line, set it as active. This gives a stable highlight as the user scrolls through tall sections.
+- Also auto-scroll the active pill into view inside the horizontally-scrollable tab bar (using `scrollIntoView({ inline: "center", block: "nearest" })`) so on narrow screens the active industry is always visible.
+- Keep clicking a pill working as today (anchor jump via `#id` with existing `scroll-mt-32`).
+
+No other files need changes.

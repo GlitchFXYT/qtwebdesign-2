@@ -71,7 +71,7 @@ export function Industries() {
         />
 
         {/* breadcrumb-style sticky industry tab bar */}
-        <div className="sticky top-16 z-30 -mx-4 mt-12 border-y border-hairline bg-background/85 px-4 py-3 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+        <div className="sticky top-16 z-30 -mx-4 mt-12 border-y border-hairline bg-background/95 px-4 py-3 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
           <div className="flex items-center gap-2 overflow-x-auto">
             <span className="shrink-0 text-xs text-ink-soft">Industries /</span>
             {industries.map((ind) => (

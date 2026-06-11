@@ -7,10 +7,16 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 import path from "node:path";
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 const entitiesRoot = path.resolve(process.cwd(), "node_modules/entities");
 
 export default defineConfig({
-  plugins: [],
+  plugins: [cloudflare({
+    viteEnvironment: {
+      name: "ssr"
+    }
+  })],
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this

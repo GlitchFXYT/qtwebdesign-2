@@ -54,7 +54,11 @@ export function Industries() {
 
   useEffect(() => {
     const el = document.querySelector<HTMLElement>(`[data-tab="${active}"]`);
-    el?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+    const container = el?.parentElement;
+    if (!el || !container) return;
+    // Scroll only the horizontal tab container — never the page.
+    const target = el.offsetLeft - container.clientWidth / 2 + el.clientWidth / 2;
+    container.scrollTo({ left: target, behavior: "smooth" });
   }, [active]);
 
   return (

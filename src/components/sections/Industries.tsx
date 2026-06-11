@@ -73,6 +73,7 @@ export function Industries() {
             {industries.map((ind) => (
               <a
                 key={ind.id}
+                data-tab={ind.id}
                 href={`#${ind.id}`}
                 className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition ${
                   active === ind.id

@@ -16,6 +16,7 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    plugins: [],
     resolve: {
       alias: {
         "entities/lib/decode.js": path.join(entitiesRoot, "lib/decode.js"),

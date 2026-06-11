@@ -39,12 +39,11 @@ export function Industries() {
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive((visible.target as HTMLElement).id);
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActive((e.target as HTMLElement).id);
+        });
       },
-      { threshold: [0.25, 0.5] }
+      { rootMargin: "-120px 0px -70% 0px", threshold: 0 }
     );
     industries.forEach((i) => {
       const el = document.getElementById(i.id);
@@ -52,6 +51,11 @@ export function Industries() {
     });
     return () => obs.disconnect();
   }, []);
+
+  useEffect(() => {
+    const el = document.querySelector<HTMLElement>(`[data-tab="${active}"]`);
+    el?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  }, [active]);
 
   return (
     <section id="industries" className="py-20 sm:py-24">
